@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\ProductoController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -18,3 +20,9 @@ Route::get('/local', function () {
 Route::get('/tailwind', function () {
     return view('tailwind');
 });
+
+
+Route::get('/categorias', [CategoriaController::class, 'index']);
+
+Route::get('/productos', [ProductoController::class, 'ver']);
+
