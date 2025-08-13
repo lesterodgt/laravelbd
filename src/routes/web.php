@@ -22,7 +22,13 @@ Route::get('/tailwind', function () {
 });
 
 
-Route::get('/categorias', [CategoriaController::class, 'index']);
+//Route::get('/categorias', [CategoriaController::class, 'index']);
+Route::resource('categorias', CategoriaController::class);
 
-Route::get('/productos', [ProductoController::class, 'ver']);
 
+
+Route::get('/productos', [ProductoController::class, 'index'])->name('productos.index');
+Route::post('/productos', [ProductoController::class, 'store'])->name('productos.store');
+Route::delete('/productos/{producto}', [ProductoController::class, 'destroy'])->name('productos.destroy');
+
+//Route::resource('productos', ProductoController::class);
