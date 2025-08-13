@@ -8,6 +8,8 @@
     <script src="//unpkg.com/alpinejs" defer></script>
     <!-- Agrega esto en tu layout: -->
     <script src="https://unpkg.com/flowbite@1.6.5/dist/flowbite.min.js"></script>
+    <script src="https://unpkg.com/alpinejs" defer></script>
+    <style>[x-cloak]{display:none!important}</style>
 
 
 </head>

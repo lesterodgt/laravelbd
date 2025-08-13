@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ArchivoController;
 use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\PersonajeController;
 use App\Http\Controllers\ProductoController;
 use Illuminate\Support\Facades\Route;
 
@@ -49,3 +50,13 @@ Route::get('/uploadprivate', function () {
 })->name('upload.formprivate');
 
 Route::post('/uploadprivate', [ArchivoController::class, 'storeprivate'])->name('upload.storeprivate');
+
+
+
+Route::get('/personajes', fn() => redirect()->route('personajes.index'));
+
+Route::resource('personajes', PersonajeController::class)
+    ->only(['index','store','edit','update']);
+
+Route::get('personajes/{personaje}/foto-privada', [PersonajeController::class, 'downloadPrivada'])
+    ->name('personajes.fotoPrivada');
