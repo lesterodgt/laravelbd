@@ -63,6 +63,6 @@
     </div>
 </div>
 
-@include('personajes._form', [ 'datoacompartir' => 'hola', 'personaje'=>new \App\Models\Personaje() ])
+@include('personajes._form', [ 'datoacompartir' => 'hola agosto desde index', 'personaje'=>new \App\Models\Personaje() ])
 
 @endsection

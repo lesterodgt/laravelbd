@@ -47,10 +47,25 @@ class PersonajeController extends Controller
         return redirect()->route('personajes.index')->with('ok', 'Personaje creado.');
     }
 
+
+
+
+
+
+
+
+
+
     public function edit(Personaje $personaje)
     {
         return view('personajes.form', compact('personaje'));
     }
+
+
+
+
+
+
 
     public function downloadPrivada(Personaje $personaje)
     {
@@ -60,8 +75,17 @@ class PersonajeController extends Controller
         $ext = pathinfo($personaje->foto_privada_path, PATHINFO_EXTENSION);
         $safeName = Str::slug($personaje->nombre ?: 'personaje') . '-privada.' . ($ext ?: 'jpg');
 
-        return Storage::disk('local')->download($personaje->foto_privada_path, $safeName);
+        /** @var FilesystemAdapter $disk */
+        $disk = Storage::disk('local');
+        return $disk->download($personaje->foto_privada_path, $safeName);
     }
+
+
+
+
+
+
+
 
     public function update(Request $request, Personaje $personaje)
     {

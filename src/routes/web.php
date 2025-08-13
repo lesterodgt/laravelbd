@@ -53,6 +53,11 @@ Route::post('/uploadprivate', [ArchivoController::class, 'storeprivate'])->name(
 
 
 
+
+
+
+
+
 Route::get('/personajes', fn() => redirect()->route('personajes.index'));
 
 Route::resource('personajes', PersonajeController::class)
